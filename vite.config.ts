@@ -1,7 +1,6 @@
 import { defineConfig, type ViteDevServer } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import { componentTagger } from "lovable-tagger";
 
 // Custom plugin to print external link
 function printExternalLink() {
@@ -26,7 +25,6 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    mode === 'development' && componentTagger(),
     printExternalLink(),
   ].filter(Boolean),
   resolve: {
